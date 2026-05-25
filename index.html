@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorfly – Generador de Paletas</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <span class="logo">Colorfly</span>
+      <p class="tagline">Tu generador de paletas al instante.</p>
+    </header>
+
+    <div class="counter-badge" id="counterBadge">0 paletas generadas</div>
+
+    <main>
+      <section class="controls" aria-label="Opciones de generación">
+        <div class="control-group">
+          <label for="countSelect">Cantidad de colores</label>
+          <select id="countSelect">
+            <option value="6">6 colores</option>
+            <option value="8">8 colores</option>
+            <option value="9">9 colores</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="formatSelect">Formato secundario</label>
+          <select id="formatSelect">
+            <option value="hex">HEX</option>
+            <option value="rgba">RGBA</option>
+            <option value="hsl">HSL</option>
+          </select>
+        </div>
+      </section>
+
+      <section aria-label="Paleta de colores">
+        <div class="palette-grid" id="paletteGrid"></div>
+      </section>
+
+      <div class="actions">
+        <div class="feedback-bar" id="feedbackBar" aria-live="polite">
+          <span class="feedback-dot"></span>
+          <span id="feedbackText"></span>
+        </div>
+        <button class="btn-generate" id="btnGenerate" type="button">
+          Generar.
+        </button>
+      </div>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <span class="toast-icon" id="toastIcon"></span>
+      <span id="toastMsg"></span>
+    </div>
+
+    <footer>
+      Colorfly &copy; 2025 — Hecho con HTML, CSS y JavaScript puro
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
