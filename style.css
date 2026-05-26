@@ -317,7 +317,8 @@ main {
 .counter-badge {
   position: fixed;
   top: 22px;
-  right: 48px;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--surface);
   border: 1px solid #3a3a3a;
   border-radius: 20px;
@@ -325,12 +326,20 @@ main {
   font-size: 0.68rem;
   color: var(--muted);
   letter-spacing: 0.1em;
-  transition: all var(--transition);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s,
+    visibility 0.4s,
+    border-color var(--transition),
+    color var(--transition);
 }
 
 .counter-badge.active {
   border-color: var(--accent);
   color: var(--accent);
+  opacity: 1;
+  visibility: visible;
 }
 
 @keyframes fadeInUp {

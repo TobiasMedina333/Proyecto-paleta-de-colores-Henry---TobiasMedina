@@ -134,6 +134,7 @@ function generatePalette() {
     totalGenerated++;
     counterBadge.textContent = `${totalGenerated} ${totalGenerated === 1 ? "paleta generada" : "paletas generadas"}`;
     counterBadge.classList.add("active");
+    setTimeout(() => counterBadge.classList.remove("active"), 2000);
 
     showFeedback(
       `✔ Paleta de ${count} colores en formato ${fmt.toUpperCase()} generada`,
